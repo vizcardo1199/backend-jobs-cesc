@@ -1,0 +1,9 @@
+export const ISO_8601_FORMAT_TIMESTAMP: string = 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]';
+export const DATABASE_FORMAT_TIMESTAMP: string = 'YYYY-MM-DD HH:mm:ss';
+export const DATABASE_FORMAT_DATE: string = 'YYYY-MM-DD';
+export const WAVEFORMS_FORMAT: string = 'YYYYMMDDHHmmss';
+export const DAILY_ROTATE_FILE_TIMESTAMP_FORMAT: string = 'YYYY-MM-DD';
+export const SP_MESSAGES_SEPARATOR: string = '||';
+export const AUDIT_USER: string = 'MONITOR-JOBS';
+export const DEFAULT_CRON_EXPRESSION: string = '* * * * *';
+export const NO_TIMEZONE: string = 'Atlantic/Azores';

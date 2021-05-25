@@ -1,11 +1,37 @@
 {
-  "name": "backend-jobs-cesc",
+  "name": "monitor-jobs",
   "version": "1.0.0",
-  "description": "This back is for mqtt",
-  "main": "index.js",
+  "description": "monitor jobs",
+  "main": "app/app.ts",
   "scripts": {
+    "clean": "npx rimraf dist",
+    "compile": "npx tsc",
+    "build": "npm run clean && npm run compile",
+    "dev": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start": "npx pm2 start pm2.yaml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Luis Vizcardo Manrique",
-  "license": "MIT"
+  "author": "Luis Pompeyo Vizcardo Manrique",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mqtt": "^2.5.0",
+    "@types/mysql": "^2.15.9",
+    "@types/node-cron": "^2.0.3",
+    "@types/npm": "^2.0.31",
+    "ts-node": "^8.8.1",
+    "tsc-watch": "^4.2.7",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "inversify": "^5.0.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "mysql": "^2.18.1",
+    "node-cron": "^2.0.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.22",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  }
 }

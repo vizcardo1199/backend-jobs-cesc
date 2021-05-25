@@ -1,0 +1,5 @@
+apps:
+  - script: ./dist/app.js
+    name: 'monitor-jobs'
+    instances: max
+    exec_mode: cluster
