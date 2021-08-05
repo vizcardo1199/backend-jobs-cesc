@@ -80,19 +80,20 @@ export class CrontabConfig {
     };
 
     private taskExecuteProccessSurveys = () => {
+        console.log("task surveys");
         return this.schedulerService.processSurveys();
     };
 
     private taskExecuteCalculateWaveforms = () => {
-        return this.schedulerService.processWaveforms();
+        // return this.schedulerService.processWaveforms();
     };
 
     private taskExecuteProcessMqtt = () => {
-        return this.schedulerService.processMqtt();
+        // return this.schedulerService.processMqtt();
     };
 
     private taskTurnOffUnusedMawois = () => {
-        return this.schedulerService.processTurnOffUnusedMawois();
+        // return this.schedulerService.processTurnOffUnusedMawois();
     };
 
     private initializeRepositories = () => {

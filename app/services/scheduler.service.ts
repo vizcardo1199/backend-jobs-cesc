@@ -65,14 +65,10 @@ export class SchedulerService {
             const sp: StoredProcedureQuery = new StoredProcedureQuery(entityManager, 'sp_process_survey');
             sp.registerStoredProcedureParameter('in_user_audit', 'in');
             sp.registerStoredProcedureParameter('out_messages_step', 'out');
-            sp.registerStoredProcedureParameter('out_messages_as', 'out');
-            sp.registerStoredProcedureParameter('out_detailed_messages_as', 'out');
-            sp.registerStoredProcedureParameter('out_messages_vs', 'out');
-            sp.registerStoredProcedureParameter('out_detailed_messages_vs', 'out');
-            sp.registerStoredProcedureParameter('out_messages_ds', 'out');
-            sp.registerStoredProcedureParameter('out_detailed_messages_ds', 'out');
-            sp.registerStoredProcedureParameter('out_messages_bands', 'out');
-            sp.registerStoredProcedureParameter('out_detailed_messages_bands', 'out');
+            sp.registerStoredProcedureParameter('out_messages_tmp', 'out');
+            sp.registerStoredProcedureParameter('out_detailed_messages_tmp', 'out');
+            sp.registerStoredProcedureParameter('out_messages_presion', 'out');
+            sp.registerStoredProcedureParameter('out_detailed_messages_presion', 'out');
 
             sp.setParameter('in_user_audit', AUDIT_USER);
             printMessages('DEDEDEDEDE', this.logger.debug);
@@ -84,24 +80,14 @@ export class SchedulerService {
             let message = sp.getOutputParameterValue('out_messages_step');
             printMessages(message, this.logger.debug);
 
-            message = sp.getOutputParameterValue('out_messages_as');
+            message = sp.getOutputParameterValue('out_messages_tmp');
             printMessages(message);
-            message = sp.getOutputParameterValue('out_detailed_messages_as');
+            message = sp.getOutputParameterValue('out_detailed_messages_tmp');
             printMessages(message, this.logger.debug);
 
-            message = sp.getOutputParameterValue('out_messages_vs');
+            message = sp.getOutputParameterValue('out_messages_presion');
             printMessages(message);
-            message = sp.getOutputParameterValue('out_detailed_messages_vs');
-            printMessages(message, this.logger.debug);
-
-            message = sp.getOutputParameterValue('out_messages_ds');
-            printMessages(message);
-            message = sp.getOutputParameterValue('out_detailed_messages_ds');
-            printMessages(message, this.logger.debug);
-
-            message = sp.getOutputParameterValue('out_messages_bands');
-            printMessages(message);
-            message = sp.getOutputParameterValue('out_detailed_messages_bands');
+            message = sp.getOutputParameterValue('out_detailed_messages_presion');
             printMessages(message, this.logger.debug);
 
         });
