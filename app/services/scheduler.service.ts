@@ -41,11 +41,11 @@ export class SchedulerService {
     }
 
     async processMqtt(): Promise<void> {
-        await this.executeBaseMqttSP('sp_process_mqtt_ao');
-        await this.executeBaseMqttSP('sp_process_mqtt_hf');
-        await this.executeBaseMqttSP('sp_process_mqtt_aw');
-        await this.executeBaseMqttSP('sp_process_mqtt_as');
-        await this.executeBaseMqttSP('sp_process_mqtt_bands');
+        await this.executeBaseMqttSP('sp_process_mqtt_tmp');
+        await this.executeBaseMqttSP('sp_process_mqtt_pr');
+        // await this.executeBaseMqttSP('sp_process_mqtt_aw');
+        // await this.executeBaseMqttSP('sp_process_mqtt_as');
+        // await this.executeBaseMqttSP('sp_process_mqtt_bands');
     }
 
     async processTurnOffUnusedMawois(): Promise<void> {
